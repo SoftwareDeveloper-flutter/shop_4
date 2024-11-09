@@ -37,7 +37,7 @@ class HomeScreenState extends State<HomeScreen>{
       
        leading: 
         
-          IconButton(onPressed: null,
+          IconButton(onPressed:(){},
         icon:Container(
           padding:const EdgeInsets.all(8.0),
           
@@ -63,13 +63,13 @@ class HomeScreenState extends State<HomeScreen>{
           child:Row(
           children:[
              const SizedBox(width:20),
-            customContainer(200.0, 120.0,50),
+            customContainer(200.0, 170.0,50),
             const SizedBox(width:30),
-            customContainer(200.0, 120.0,70),
+            customContainer(200.0, 170.0,70),
           ],
         ),),),
       bottomNavigationBar:BottomNavigationBar(
-        backgroundColor: Colors.black,
+     
          currentIndex: currentIndexValue,
          onTap:(index) {
           setState(() {
@@ -77,9 +77,12 @@ class HomeScreenState extends State<HomeScreen>{
           });
         },
          type: BottomNavigationBarType.shifting, 
+          unselectedItemColor: const Color.fromARGB(255, 0, 0, 0), 
+          selectedItemColor: Colors.black,
          items:const[
          
-          BottomNavigationBarItem(icon: Icon(Icons.home,color:Colors.black),label:'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.home,color:Colors.black),
+          label:"Home"),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart,color:Colors.black),label:"Cart"),
           BottomNavigationBarItem(icon: Icon(Icons.notifications,color:Colors.black),label:"Notifications"),
           BottomNavigationBarItem(icon: Icon(Icons.person,color:Colors.black),label:"Profile"),
@@ -105,10 +108,34 @@ Widget customContainer(double w,double h,int percent){
       crossAxisAlignment: CrossAxisAlignment.start,
        
       children: [
+        //  Image.asset('assets/images/shop.jpg',width: 60),
+         Column(
+          children: [
         Text("$percent% Off",style:const TextStyle(fontWeight:FontWeight.bold,fontSize:25)),
-      
+        const SizedBox(width:10),
+        const Text('On everything today',style: TextStyle(fontSize:16)),
+        const SizedBox(height:10),
+        const Text('With Code:FSCREATION',style:TextStyle(color:Colors.grey,fontSize:12),),
+       
+         Padding(
+          padding:const EdgeInsets.only(top:5.0,bottom: 1.0),
+          child:ElevatedButton(
+          onPressed: (){},
+          style:ElevatedButton.styleFrom(
+              backgroundColor:Colors.black,
+             foregroundColor: Colors.white
+
+          ),
+          child:const Text("Get Now")
+        ),),
+      ],)
        
       ],
-    ),),
+     
+    ),
+    
+    ),
+   
+        
   );
 }
