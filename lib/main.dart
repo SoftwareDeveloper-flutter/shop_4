@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_4/screens/detail_screen.dart';
 
 
 void main(){
@@ -96,9 +97,44 @@ class HomeScreenState extends State<HomeScreen>{
               child:Row(
               children:[
                 const SizedBox(width:20),
-                customContainer(190.0, 200.0,50),
+                InkWell(
+                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>const  DetailScreen()),
+                    );
+                  },
+          splashColor: Colors.blueAccent, 
+          highlightColor: Colors.lightBlueAccent.withOpacity(0.3), 
+          borderRadius: BorderRadius.circular(10.0), 
+                  child:customContainer(190.0, 200.0,50),
+                ),
+                  const SizedBox(width:20),
+                   InkWell(
+                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>const  DetailScreen()),
+                    );
+                  },
+          splashColor: Colors.blueAccent, 
+          highlightColor: Colors.lightBlueAccent.withOpacity(0.3), 
+          borderRadius: BorderRadius.circular(10.0), 
+                child:customContainer(190.0, 200.0,50),
+                   ),
                 const SizedBox(width:10),
-                customContainer(190.0, 200.0,70),
+                 InkWell(
+                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>const  DetailScreen()),
+                    );
+                  },
+          splashColor: Colors.blueAccent, 
+          highlightColor: Colors.lightBlueAccent.withOpacity(0.3), 
+          borderRadius: BorderRadius.circular(10.0), 
+                child:customContainer(190.0, 200.0,70),
+                 )
               
               ],
               ),
