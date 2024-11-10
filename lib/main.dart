@@ -68,9 +68,9 @@ class HomeScreenState extends State<HomeScreen>{
               child:Row(
               children:[
                 const SizedBox(width:20),
-                customContainer(200.0, 170.0,50),
+                customContainerWithImg(200.0, 170.0,50),
                 const SizedBox(width:10),
-                customContainer(200.0, 170.0,70),
+                customContainerWithImg(200.0, 170.0,70),
               
               ],
               ),
@@ -96,9 +96,9 @@ class HomeScreenState extends State<HomeScreen>{
               child:Row(
               children:[
                 const SizedBox(width:20),
-                customContainerWithImg(200.0, 170.0,50),
+                customContainer(190.0, 200.0,50),
                 const SizedBox(width:10),
-                customContainerWithImg(200.0, 170.0,70),
+                customContainer(190.0, 200.0,70),
               
               ],
               ),
@@ -168,46 +168,69 @@ Widget customContainer(double w,double h,int percent){
     width: w,
     height:h,
     decoration: BoxDecoration(
-      color:const Color(0xFFDADADA),
+    border: Border.all(width: 3.0,color:Colors.black),
       borderRadius:BorderRadius.circular(20.0)
     ),
     
     child:Padding( 
-      padding:const EdgeInsets.all(15.0),
-    child:Row(
+      padding:const EdgeInsets.all(7.0),
+      child:Column(
+        children: [
+           Row(
       crossAxisAlignment: CrossAxisAlignment.start,
        
       children: [
         //  Image.asset('assets/images/shop.jpg',width: 60),
          Column(
           children: [
-        Text("$percent% Off",style:const TextStyle(fontWeight:FontWeight.w900,fontSize:25)),
-        const SizedBox(width:10),
-        const Text('On everything today',style: TextStyle(fontSize:16)),
-        const SizedBox(height:10),
-        const Text('With Code:FSCREATION',style:TextStyle(color:Colors.grey,fontSize:12),),
+             Padding(
+              padding:const EdgeInsets.only(left:120.0),
+              child:Container(
+                width: 30.0,
+                height:30.0,
+                decoration:  BoxDecoration(
+                 color:Colors.black,
+                 borderRadius: BorderRadius.circular(20.0),
+                ),
+                  child:const Icon(Icons.favorite_border_outlined,color:Colors.white),
+              ),
+            
+            
+         ),
+            Padding(
+          padding:const EdgeInsets.only(top:5.0,left:10.0),
+      child: ClipRRect(
+           borderRadius: BorderRadius.circular(8.0),
+          child:Image.asset('assets/images/shoe.jpg',height:90)
+       ),
+            ),
        
-         Padding(
-          padding:const EdgeInsets.only(top:5.0,bottom: 1.0),
-          child:ElevatedButton(
-          onPressed: (){},
-          style:ElevatedButton.styleFrom(
-              backgroundColor:Colors.black,
-             foregroundColor: Colors.white
-
-          ),
-          child:const Text("Get Now")
-        ),),
-      ],)
+        
+      ],),
+     
        
       ],
      
     ),
-    
+    const Padding(
+      padding:EdgeInsets.only(top:1.0,left:5.0),
+      child:Column(
+         children: [
+          Text("The Marc Jacobs",style:TextStyle(fontSize:14,fontWeight:FontWeight.w900)),
+         Text("Traveler Tote",style:TextStyle(fontSize:12,fontWeight:FontWeight.w900)),
+          Text("\$195.0.0",style:TextStyle(fontSize:12,fontWeight:FontWeight.w900)),
+         ],
     ),
-   
+    ),
+        ],
+
+      ),
+
+    ),
+    
         
   );
+  
 }
 
 
