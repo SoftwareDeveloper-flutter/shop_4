@@ -56,18 +56,88 @@ class HomeScreenState extends State<HomeScreen>{
        
       ],
         ),
-        body:Padding(
+        body:SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
           padding:const EdgeInsets.only(top: 15.0),
-        child:SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child:Row(
-          children:[
-             const SizedBox(width:20),
-            customContainer(200.0, 170.0,50),
-            const SizedBox(width:30),
-            customContainer(200.0, 170.0,70),
-          ],
-        ),),),
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.start, 
+            children:[
+              SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child:Row(
+              children:[
+                const SizedBox(width:20),
+                customContainer(200.0, 170.0,50),
+                const SizedBox(width:10),
+                customContainer(200.0, 170.0,70),
+              
+              ],
+              ),
+              ),
+              const SizedBox(height:20),
+              const Row(
+                children: [
+                       Padding(
+                        padding:EdgeInsets.only(left:20.0),
+                      child: Text("New Arrivals",style:TextStyle(fontSize:22,fontWeight:FontWeight.w900)),
+                      ),
+                       Padding(
+                        padding:EdgeInsets.only(left:100.0),
+                      child: Text("View All",style:TextStyle(fontSize:16,fontWeight:FontWeight.w300)),
+                      ),
+             ] ),
+            
+               const SizedBox(height:10),
+                 Padding(
+                padding:const EdgeInsets.only(left:20.0),
+               child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child:Row(
+              children:[
+                const SizedBox(width:20),
+                customContainerWithImg(200.0, 170.0,50),
+                const SizedBox(width:10),
+                customContainerWithImg(200.0, 170.0,70),
+              
+              ],
+              ),
+              ),
+              ),
+                const SizedBox(height:20),
+              const Row(
+                children: [
+                       Padding(
+                        padding:EdgeInsets.only(left:20.0),
+                      child: Text("Popular",style:TextStyle(fontSize:22,fontWeight:FontWeight.w900)),
+                      ),
+                       Padding(
+                        padding:EdgeInsets.only(left:150.0),
+                      child: Text("View All",style:TextStyle(fontSize:16,fontWeight:FontWeight.w300)),
+                      ),
+             ] ),
+            
+               const SizedBox(height:10),
+                 Padding(
+                padding:const EdgeInsets.only(left:20.0),
+               child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child:Row(
+              children:[
+                const SizedBox(width:20),
+                customContainerPopular(300.0, 90.0,50),
+                const SizedBox(width:10),
+                customContainerPopular(300.0, 90.0,70),
+              
+              ],
+              ),
+              ),
+              ),
+            ],
+          ),
+          ),
+        ),
+      
       bottomNavigationBar:BottomNavigationBar(
      
          currentIndex: currentIndexValue,
@@ -111,7 +181,7 @@ Widget customContainer(double w,double h,int percent){
         //  Image.asset('assets/images/shop.jpg',width: 60),
          Column(
           children: [
-        Text("$percent% Off",style:const TextStyle(fontWeight:FontWeight.bold,fontSize:25)),
+        Text("$percent% Off",style:const TextStyle(fontWeight:FontWeight.w900,fontSize:25)),
         const SizedBox(width:10),
         const Text('On everything today',style: TextStyle(fontSize:16)),
         const SizedBox(height:10),
@@ -130,6 +200,133 @@ Widget customContainer(double w,double h,int percent){
         ),),
       ],)
        
+      ],
+     
+    ),
+    
+    ),
+   
+        
+  );
+}
+
+
+Widget customContainerWithImg(double w,double h,int percent){
+  return Container(
+    width: w,
+    height:h,
+    decoration: BoxDecoration(
+      color:const Color(0xFFDADADA),
+      borderRadius:BorderRadius.circular(20.0),
+         image: const DecorationImage(
+              image: AssetImage('assets/images/shop.jpg'),
+              fit: BoxFit.cover,
+            ),
+    ),
+    
+    child:Padding( 
+      padding:const EdgeInsets.all(15.0),
+    child:Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+       
+      children: [
+        //  Image.asset('assets/images/shop.jpg',width: 60),
+         Column(
+          children: [
+        Text("$percent% Off",style:const TextStyle(fontWeight:FontWeight.w900,fontSize:25)),
+        const SizedBox(width:10),
+        const Text('On everything today',style: TextStyle(fontSize:16)),
+        const SizedBox(height:10),
+        const Text('With Code:FSCREATION',style:TextStyle(color:Colors.white,fontSize:12),),
+       
+         Padding(
+          padding:const EdgeInsets.only(top:5.0,bottom: 1.0),
+          child:ElevatedButton(
+          onPressed: (){},
+          style:ElevatedButton.styleFrom(
+              backgroundColor:Colors.black,
+             foregroundColor: Colors.white
+
+          ),
+          child:const Text("Get Now")
+        ),),
+      ],)
+       
+      ],
+     
+    ),
+    
+    ),
+   
+        
+  );
+}
+
+
+
+
+
+
+Widget customContainerPopular(double w,double h,int percent){
+  return Container(
+    width: w,
+    height:h,
+    decoration: BoxDecoration(
+      color:const Color(0xFFDADADA),
+      borderRadius:BorderRadius.circular(20.0),
+    ),
+    
+    child:Padding( 
+      padding:const EdgeInsets.all(15.0),
+    child:Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+       
+      children: [
+    
+         Column(
+          children: [
+                  ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Image.asset(
+          'assets/images/shoe.jpg',
+          width: 90,
+        ),
+      )
+          
+        ],
+      ),
+          const Padding(
+              padding:EdgeInsets.only(left:10.0),
+        child:Column(
+        children:[
+          Text("Gia Borghini",style:TextStyle(color:Colors.black,fontSize:13,fontWeight:FontWeight.w900)),
+          Text("RHW Rose 1 Sandals",style:TextStyle(color:Color.fromARGB(255, 133, 133, 133),fontSize:10,fontWeight:FontWeight.w900)),
+          Row(
+            children: [
+            Icon(
+                Icons.star,
+                color: Colors.amber,
+                size: 20.0,
+              ),
+              SizedBox(width:10),
+              Text("(4.5)",style:TextStyle(fontSize:12,fontWeight:FontWeight.w900))
+            ],
+          ),
+          
+        
+        ],
+        ),
+       ),
+
+        const Padding(
+              padding:EdgeInsets.only(left:10.0),
+        child:Column(
+        children:[
+          SizedBox(height:15),
+          Text("\$740",style:TextStyle(color:Colors.black,fontSize:20,fontWeight:FontWeight.w900)),
+        ],
+        ),
+       ),
       ],
      
     ),
