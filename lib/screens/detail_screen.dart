@@ -104,11 +104,105 @@ class DetailScreenState extends State<DetailScreen>{
          
             ),
           ),
-          const Padding(
-            padding:EdgeInsets.only(top:10.0,left:10.0),
+           Padding(
+            padding:const EdgeInsets.only(top:10.0,left:10.0),
             child:Align(
                alignment: Alignment.centerLeft,
-               child:Text("Size",style:TextStyle(fontSize:17,fontWeight:FontWeight.bold))
+               child:Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   const Text("Size",style:TextStyle(fontSize:17,fontWeight:FontWeight.bold)),
+                   Row(
+                    children:[
+                       Container(
+                        width:40,
+                        height:40,
+                         decoration:BoxDecoration(
+                          borderRadius:BorderRadius.circular(30),
+                         border:Border.all(
+                          color:Colors.black,
+                          width:1.3
+                         ),
+                          color:Colors.white
+                         ),
+                         child:const Padding(
+                          padding: EdgeInsets.all(10.0),
+                         child: Text("39",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Colors.black)),
+                         ),
+                      ),
+               const SizedBox(width:10),
+                 Container(
+                        width:40,
+                        height:40,
+                         decoration:BoxDecoration(
+                          borderRadius:BorderRadius.circular(30),
+                         border:Border.all(
+                          color:Colors.black,
+                          width:1.3
+                         ),
+                          color:Colors.white
+                         ),
+                         child:const Padding(
+                          padding: EdgeInsets.all(10.0),
+                         child: Text("39.5",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Colors.black)),
+                         ),
+                      ),
+      const SizedBox(width:10),
+                 Container(
+                        width:40,
+                        height:40,
+                         decoration:BoxDecoration(
+                          borderRadius:BorderRadius.circular(30),
+                         border:Border.all(
+                          color:Colors.black,
+                          width:1.3
+                         ),
+                          color:Colors.white
+                         ),
+                         child:const Padding(
+                          padding: EdgeInsets.all(10.0),
+                         child: Text("40",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Colors.black)),
+                         ),
+                      ),
+const SizedBox(width:10),
+                 Container(
+                        width:40,
+                        height:40,
+                         decoration:BoxDecoration(
+                          borderRadius:BorderRadius.circular(30),
+                         border:Border.all(
+                          color:Colors.black,
+                          width:1.3
+                         ),
+                          color:Colors.white
+                         ),
+                         child:const Padding(
+                          padding: EdgeInsets.all(10.0),
+                         child: Text("40.5",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Colors.black)),
+                         ),
+                      ),
+  const SizedBox(width:10),
+                 Container(
+                        width:40,
+                        height:40,
+                         decoration:BoxDecoration(
+                          borderRadius:BorderRadius.circular(30),
+                         border:Border.all(
+                          color:Colors.black,
+                          width:1.3
+                         ),
+                          color:Colors.black
+                         ),
+                         child:const Padding(
+                          padding: EdgeInsets.all(10.0),
+                         child: Text("41",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Colors.white)),
+                         ),
+                      ),
+                    ]
+                   ),
+                ],
+               ),
+               
             ),
           ),
 
@@ -121,8 +215,8 @@ class DetailScreenState extends State<DetailScreen>{
                 children: [
             const Text("Description",style:TextStyle(fontSize:17,fontWeight:FontWeight.bold)),
             const SizedBox(height:10),
-            const Text("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",style:TextStyle(fontSize:12,fontWeight:FontWeight.w100)),
-            const SizedBox(height:30),
+            const Text("There are many variations of passages of Lorem Ipsumvfsdfsfsdfdsf",style:TextStyle(fontSize:12,fontWeight:FontWeight.w100)),
+            const SizedBox(height:20),
             Row(
               
               children: [
