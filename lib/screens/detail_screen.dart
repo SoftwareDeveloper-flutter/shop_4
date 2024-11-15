@@ -112,11 +112,47 @@ class DetailScreenState extends State<DetailScreen>{
             ),
           ),
 
-          const Padding(
-            padding:EdgeInsets.only(top:10.0,left:10.0),
+           Padding(
+            padding:const EdgeInsets.only(top:10.0,left:10.0),
             child:Align(
                alignment: Alignment.centerLeft,
-               child:Text("Description",style:TextStyle(fontSize:17,fontWeight:FontWeight.bold))
+               child:Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+            const Text("Description",style:TextStyle(fontSize:17,fontWeight:FontWeight.bold)),
+            const SizedBox(height:10),
+            const Text("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",style:TextStyle(fontSize:12,fontWeight:FontWeight.w100)),
+            const SizedBox(height:30),
+            Row(
+              
+              children: [
+                const Column(
+              
+                  children: [
+                         SizedBox(width:120),
+           Text("Total Price",style:TextStyle(fontSize:10,fontWeight:FontWeight.w100)),
+             Text("\$245.00",style:TextStyle(fontSize:17,fontWeight:FontWeight.w900))
+                  ],
+                ),
+  
+   const SizedBox(width:20),
+    ElevatedButton(
+      onPressed:(){},
+      style:ElevatedButton.styleFrom(
+        backgroundColor: Colors.black,
+        foregroundColor:Colors.white,
+         minimumSize: const Size(150, 50),
+      ),
+
+      child: const Text("Add to cart"),
+    ),
+             
+              ]
+            ),
+        
+        
+                ])
+               
             ),
           ),
               
